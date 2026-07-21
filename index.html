@@ -130,7 +130,7 @@
     </div>
     <div class="space-y-4">
       <p class="text-xs font-semibold uppercase tracking-widest font-premium" style="color:#b2eddf">Elige tu Clan de Conexión</p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="lobby-grid"></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="lobby-grid"></div>
     </div>
   </div>
 
@@ -255,7 +255,7 @@
       <h2 class="text-2xl font-bold font-premium tracking-widest" style="color:#14d4ac">🌳 Control de Raíces</h2>
       <p class="text-xs font-premium tracking-widest uppercase" style="color:rgba(178,237,223,.5)">Panel del Facilitador · Chipax 10 años</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="admin-team-grid"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="admin-team-grid"></div>
     <div>
       <p class="text-xs font-premium tracking-widest mb-4" id="admin-ready-count" style="color:rgba(178,237,223,.35)">0 / 6 clanes listos</p>
       <button id="connect-btn" onclick="triggerFusion()" disabled class="w-full md:w-auto py-4 px-10 rounded-xl disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold font-premium tracking-wider text-lg transition-all" style="background:linear-gradient(135deg,#00695c,#00897b,#00BA8F);box-shadow:0 0 22px rgba(0,212,172,.3)">🧬 CONECTAR RED — FUSIONAR FLORES</button>
@@ -285,127 +285,140 @@ function resetLS(){lsSet({})}
 ══════════════════════════════════════════════════ */
 const CL_ALL={
   Alfa:{emoji:'⚡',questions:[
-    {id:'a1',name:'Claudio Castillo',year:'2023',avatarText:'CC',
-     seed:'Vivía en Viña del Mar y hoy en Quillota. Entró desde el mundo del UX en una startup y su gran hito en Chipax fue anunciar que ¡va a ser papá de 3! 🍼 Dato curioso: su primera semana nunca bailó cueca… pero sí en video.',
+    {id:'a1',name:'Claudio Castillo',year:'2023',avatarText:'CC',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/claudio.jpeg',
+     seed:'Vivía en Viña del Mar, hoy en Quillota. Llega desde el UX en startups. Hito en Chipax: ¡va a ser papá de 3! 🍼 Condoro: su primera semana nunca bailó cueca... pero sí en video. Entró "Expectante".',
      options:['Claudio Castillo','Frano Quiroz','Javiera Gómez','François Gueneau']},
-    {id:'a2',name:'Frano Quiroz',year:'2019',avatarText:'FQ',
-     seed:'Lleva más de 6 años en Chipax y es el único trabajo de su vida donde desde el primer día sintió que siempre había estado ahí. Viene del mundo del marketing digital en Regalos Clicker. Su condoro favorito: el primer día fue Toni quien le dio clases de finanzas… a alguien que solo sabía depositar un cheque. 😅 Hito: comenzó un proceso de desarrollo personal donde cada año abarca algo nuevo de sí mismo. Entró "Desafiado".',
+    {id:'a2',name:'Frano Quiroz',year:'2019',avatarText:'FQ',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/frano.jpeg',
+     seed:'Supervisor Digital en Regalos Clicker antes de Chipax. Su hito: comenzó un proceso de desarrollo personal donde cada año abarca algo nuevo. Condoro: el primer día Toni le hizo clases de finanzas a alguien que solo sabía depositar un cheque. 😅 Entró "Desafiado".',
      options:['Frano Quiroz','Claudio Castillo','Giuliano Tritto','François Gueneau']},
-    {id:'a3',name:'Javiera Gómez',year:'2024',avatarText:'JG',
-     seed:'Viene de Padre Hurtado y sigue viviendo allí. Llegó desde las ventas en una startup YC y su condoro fue intentar aprender todo de una vez, sin seguir la pauta, por ansiosa. 😂 Su hito: viajar a ver a su grupo favorito. Entró nerviosa.',
+    {id:'a3',name:'Javiera Gómez',year:'2024',avatarText:'JG',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/javig.jpeg',
+     seed:'Sales Executive en Examedi (YC S21) antes de Chipax. Hito: viajó a ver su grupo favorito y se hizo cargo de un proyecto. Condoro: intentó aprender todo de una vez sin seguir la pauta, por ansiosa. 😂 Entró "Nerviosa".',
      options:['Javiera Gómez','Frano Quiroz','Giuliano Tritto','Claudio Castillo']},
-    {id:'a4',name:'Giuliano Tritto',year:'2025',avatarText:'GT',
-     seed:'Llegó desde el liderazgo técnico en otra empresa. Su gran hito en Chipax: construir su casa ladrillo a ladrillo, mes a mes, sin excepción. 🏠 Dato curioso: sus primeros tickets eran todos de empresas que tenían "SPA" en el nombre… y creía que el sistema lo usaban solo spas. 😂 Entró sintiéndose "Renovado".',
+    {id:'a4',name:'Giuliano Tritto',year:'2025',avatarText:'GT',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/dibu.jpeg',
+     seed:'Líder técnico en Oversoft, vive en Balvanera. Gran hito: construir su casa ladrillo a ladrillo, mes a mes, sin excepción. 🏠 Condoro: sus primeros tickets eran todos de empresas con "SPA" en el nombre y creía que el sistema lo usaban solo spas. 😂 Entró "Renovado".',
      options:['Giuliano Tritto','François Gueneau','Javiera Gómez','Claudio Castillo']},
-    {id:'a5',name:'François Gueneau',year:'2017',avatarText:'FM',
-     seed:'De Santiago se mudó a Puerto Varas. Antes fue CEO de una empresa. Uno de los primeros en llegar al árbol de Chipax. Sin hito ni condoro registrado… pero todos saben quién es. 🌳',
+    {id:'a5',name:'François Gueneau',year:'2017',avatarText:'FM',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/francois.jpeg',
+     seed:'CEO en Safecard antes de Chipax. Se mudó de Santiago a Puerto Varas. Su hito: mudarse al sur. Condoro: tardó 1 año en hacer el módulo de Flujo de Caja. Entró con miedo pero motivado — estaba emprendiendo con su mejor amigo.',
      options:['François Gueneau','Frano Quiroz','Claudio Castillo','Giuliano Tritto']},
-    {id:'imp_a',name:'Falso Conciliador X',year:'2026',avatarText:'🤖',isImpostor:true,
-     seed:'Asegura que lleva 6 meses en Chipax conciliando en Excel con macros que él mismo llamó "Eywa_v3_FINAL_ok.xlsm". Vive en el servidor de staging y su hito personal fue automatizar una planilla que nadie le pidió.',
+    {id:'imp_a',name:'Falso Conciliador X',year:'2026',avatarText:'🤖',photo:'',isImpostor:true,
+     seed:'Asegura que lleva 6 meses conciliando en Excel con una macro que llamó "Eywa_v3_FINAL_ok.xlsm". Vive en el servidor de staging y su hito fue automatizar una planilla que nadie le pidió.',
      options:['¡Es un Impostor!','Claudio Castillo','Frano Quiroz','Javiera Gómez']}
   ]},
   Beta:{emoji:'🌊',questions:[
-    {id:'b1',name:'Gracia Valenzuela',year:'2024',avatarText:'GV',
-     seed:'Su condoro épico: su primer sueldo en Chipax se lo pagaron a la Gracia Ortúzar por error, y como era nueva no se atrevía a preguntar qué pasó. 😂 Su hito: hizo eurotrip dos veces por varios meses gracias a que Chipax le permite trabajar desde cualquier parte del mundo. Entró "Entusiasmada".',
+    {id:'b1',name:'Gracia Valenzuela',year:'2024',avatarText:'GV',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/gracia.jpeg',
+     seed:'Colaboradora en Revista Poros antes de Chipax. Hito épico: hizo eurotrip DOS veces por varios meses gracias a que Chipax le permite trabajar desde cualquier parte. 🌍 Condoro: su primer sueldo se lo pagaron a la Gracia Ortúzar por error y no se atrevía a preguntar. 😂 Entró "Entusiasmada".',
      options:['Gracia Valenzuela','Daniela Ñancul','Dal Díaz','Alexis Nilo']},
-    {id:'b2',name:'Daniela Ñancul',year:'2024',avatarText:'DÑ',
-     seed:'De Puerto Montt. Nunca había usado Mac, y un día se perdió una reunión entera porque tenía la ventana en pantalla completa y no le llegaron las notificaciones del calendario. "Me quería morir", dice. 😂 Su hito: viajó a otro país con amigos por primera vez. Entró con "Expectación".',
+    {id:'b2',name:'Daniela Ñancul',year:'2024',avatarText:'DÑ',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/dani.jpeg',
+     seed:'Practicante universitaria en SGS, de Puerto Montt. Hito: viajó a otro país con amigos por primera vez y volvió a estudiar. Condoro: tenía la ventana en pantalla completa en Mac y se perdió una reunión entera porque nunca le llegó la notificación. "Me quería morir." 😂 Entró con "Expectación".',
      options:['Daniela Ñancul','Gracia Valenzuela','Alexis Nilo','Toni Correa']},
-    {id:'b3',name:'Dal Díaz',year:'2022',avatarText:'DD',
-     seed:'Llegó desde Buenos Aires (Quilmes) y hoy vive en Palermo. Su condoro más famoso: pensó que "la cagaste" era algo terrible su primera semana… hasta que le explicaron que en Chile es buena connotación. 😅 Hito: conoció 4 países en Europa y 3 ciudades en Estados Unidos. Entró con "Dificil" como palabra.',
+    {id:'b3',name:'Dal Díaz',year:'2022',avatarText:'DD',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/dal.jpeg',
+     seed:'Senior People Experience en redbee Studios en Buenos Aires (Quilmes→Palermo). Hito: conoció 4 países en Europa y 3 ciudades en EE.UU. 🌍 Condoro: pensó que "la cagaste" era algo terrible su primera semana... hasta que le explicaron la connotación chilena. 😅 Entró con "Difícil".',
      options:['Dal Díaz','Toni Correa','Daniela Ñancul','Gracia Valenzuela']},
-    {id:'b4',name:'Alexis Nilo',year:'2020',avatarText:'AN',
-     seed:'Chipax es importante para él: suena en todas las presentaciones de Lighthouse. Pero sus hitos personales son igual de grandes: compró su casa, se casó, perdió a Obi (su perro de casi 19 años 🐾), adoptó a otro para que Oreo no estuviera sola… y ¡va a ser papá de un niño! 👶 Entró "Nervioso" porque reprobó 2 veces las pruebas técnicas.',
+    {id:'b4',name:'Alexis Nilo',year:'2020',avatarText:'AN',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/alexis.jpeg',
+     seed:'Desarrollador en Safecard. En Chipax: consiguió su casa, se casó, murió su perro Obi (19 años 🐾), adoptaron otro para que Oreo no estuviera sola, ¡y va a ser papá de un niño! 👶 Condoro: en una reunión sonó como si Comber no hubiera hecho nada, y Comber se defendió. Entró "Nervioso" — había reprobado 2 veces la prueba técnica.',
      options:['Alexis Nilo','Dal Díaz','Toni Correa','Gracia Valenzuela']},
-    {id:'b5',name:'Toni Correa',year:'2016',avatarText:'TC',
-     seed:'Uno de los primeros en plantar la semilla de Chipax, desde 2016. Hoy vive en Vitacura. Su gran aprendizaje en estos 10 años: encontrar un balance sano entre vida personal y profesional. 🧘 El árbol completo nació de su visión.',
+    {id:'b5',name:'Toni Correa',year:'2016',avatarText:'TC',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/toni.jpeg',
+     seed:'CEO en Medularis antes de Chipax. Uno de los primeros en plantar la semilla del árbol. Su gran aprendizaje en 10 años: encontrar un balance sano entre vida personal y profesional. 🧘',
      options:['Toni Correa','Alexis Nilo','Gracia Valenzuela','Daniela Ñancul']},
-    {id:'imp_b',name:'El Fantasma del Balance',year:'2025',avatarText:'👻',isImpostor:true,
-     seed:'Llegó "desde el mundo digital" y dice que su hito fue cerrar el mes con el balance cuadrando… pero lo hizo borrando filas que no le gustaban. Vive en el caché del servidor y su condoro fue mandar un informe de 400 páginas por error a todos.',
+    {id:'imp_b',name:'El Fantasma del Balance',year:'2025',avatarText:'👻',photo:'',isImpostor:true,
+     seed:'Dice que su hito fue cerrar el mes con el balance cuadrando... pero lo hizo borrando filas que no le gustaban. Vive en el caché del servidor.',
      options:['¡Es un Impostor!','Gracia Valenzuela','Dal Díaz','Toni Correa']}
   ]},
   Gamma:{emoji:'🔥',questions:[
-    {id:'g1',name:'Pablo Ojeda',year:'2021',avatarText:'PO',
-     seed:'De Puerto Montt. En 5 años en Chipax se casó, adoptó una perra, nació JP, y abrió Neurocrece. 🧠 Su condoro: el primer día llegó con camisa y súper peinado como ejecutivo bancario. A los 5 minutos de que le dijeran que no era necesario, apagó la cámara y reapareció con polerón. 😂 Entró "Motivado".',
+    {id:'g1',name:'Pablo Ojeda',year:'2021',avatarText:'PO',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/pablo.jpeg',
+     seed:'Director de Proyectos & PM en Prime Developers Chile, de Puerto Montt. En 5 años en Chipax: se casó, adoptó una perra, nació JP, abrió Neurocrece 🧠. Condoro: el primer día llegó con camisa y súper peinado como ejecutivo bancario. Le dijeron que no era necesario, apagó la cámara y reapareció con polerón. 😂 Entró "Motivado".',
      options:['Pablo Ojeda','Carla Möller','Graci Cortez','Jhoa Díaz']},
-    {id:'g2',name:'Carla Möller',year:'2026',avatarText:'CM',
-     seed:'Vivía en Alemania y volvió a Valdivia para unirse a Chipax. 🇩🇪→🇨🇱 Su condoro: intentó tener dos trabajos simultáneos cuando entró. "Claramente imposible jajajaj". Su hito: volver a Chilito y superar el sign-in bonus. Entró "Emocionadísima".',
+    {id:'g2',name:'Carla Möller',year:'2026',avatarText:'CM',photo:'',
+     seed:'Content Moderator en TELUS Digital AI en Alemania. Cruzó el océano de vuelta a Valdivia. 🇩🇪→🇨🇱 Hito: volver a Chilito y superar el sign-in bonus. Condoro: intentó tener DOS trabajos simultáneos cuando entró. "Claramente imposible jajajaj". Entró "Emocionadísima".',
      options:['Carla Möller','María Paz Fernández','Pablo Ojeda','Graci Cortez']},
-    {id:'g3',name:'Graci Cortez',year:'2024',avatarText:'GC',
-     seed:'De Viña del Mar, hoy en Cabildo. Su condoro: recién llegada, cargó más meses de info a un cliente "porque según yo era algo bacán y proactivo"… no era. Le llovieron emojis de 😭 del cliente. Hoy es Team Lead. Su hito: lanzó un emprendimiento. Entró con "Motivación".',
+    {id:'g3',name:'Graci Cortez',year:'2024',avatarText:'GC',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/graci.jpeg',
+     seed:'Ayudante de cátedra en la PUCV, de Viña del Mar, hoy en Cabildo. Hito: lanzó un emprendimiento. Condoro: recién llegada le cargó más meses de info a un cliente "porque según yo era bacán y proactivo"… no era, y le llovieron emojis de 😭. Hoy es Team Lead. Entró con "Motivación".',
      options:['Graci Cortez','Pablo Ojeda','Jhoa Díaz','María Paz Fernández']},
-    {id:'g4',name:'María Paz Fernández',year:'2026',avatarText:'MF',
-     seed:'De Talca. El mismo día que empezó en Chipax se cambió de casa. Casa nueva, trabajo nuevo, vida nueva. 🏠 Su condoro: nunca había usado Mac y estaba todo el día buscando hasta cómo hacer la arroba. "Era una tortuga trabajando." 🐢 Entró "Ilusionada".',
+    {id:'g4',name:'María Paz Fernández',year:'2026',avatarText:'MF',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/maripa.jpeg',
+     seed:'Analista Factoring en Constructora Independencia, de Talca. El mismo día que empezó en Chipax se cambió de casa. Casa nueva, trabajo nuevo, vida nueva. 🏠 Condoro: nunca había usado Mac y buscaba hasta cómo hacer la arroba. "Era una tortuga trabajando." 🐢 Entró "Ilusionada".',
      options:['María Paz Fernández','Carla Möller','Graci Cortez','Pablo Ojeda']},
-    {id:'g5',name:'Jhoa Díaz',year:'2022',avatarText:'JD',
-     seed:'Vivía en Chile y hoy en Argentina. Chipax le dio la libertad y la plata para mudarse. 🇦🇷 Su condoro más épico: emitió una nota de crédito por 400 millones de pesos. 😱 Su palabra al entrar fue "En la mierda" (las más honesta del equipo).',
+    {id:'g5',name:'Jhoa Díaz',year:'2022',avatarText:'JD',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/jhoa.jpeg',
+     seed:'Coordinador de soporte en Prevsis. Chipax le dio la libertad y la plata para mudarse de Chile a Argentina 🇦🇷. Condoro legendario: emitió una nota de crédito por 400 millones de pesos. 😱 Su palabra al entrar: "En la mierda" (la más honesta del equipo).',
      options:['Jhoa Díaz','Pablo Ojeda','María Paz Fernández','Graci Cortez']},
-    {id:'imp_g',name:'El Bot del Debe-Haber',year:'2025',avatarText:'🤡',isImpostor:true,
-     seed:'Dice que lleva un año en Chipax y que su gran hito fue descubrir que el debe va a la izquierda. O a la derecha. Nunca está seguro. Su condoro: explicó la contabilidad de doble entrada en una reunión de producto y nadie lo paró a tiempo.',
+    {id:'imp_g',name:'El Bot del Debe-Haber',year:'2025',avatarText:'🤡',photo:'',isImpostor:true,
+     seed:'Dice que lleva un año en Chipax. Su gran hito: descubrir que el debe va a la izquierda. O a la derecha. Nunca está seguro. Condoro: explicó la contabilidad de doble entrada en una reunión de producto y nadie lo paró a tiempo.',
      options:['¡Es un Impostor!','Pablo Ojeda','Graci Cortez','Jhoa Díaz']}
   ]},
   Delta:{emoji:'🌙',questions:[
-    {id:'d1',name:'Maripi Bou',year:'2019',avatarText:'MB',
-     seed:'De La Serena a Vitacura. Antes cuidaba bosques en la CONAF. En Chipax adoptó una perra y se casó. 🐶💍 No tiene condoro registrado, pero tiene 7 años de raíces profundas en el árbol.',
+    {id:'d1',name:'Maripi Bou',year:'2019',avatarText:'MB',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/maripi.jpeg',
+     seed:'Planificación Uso Público en CONAF, de La Serena a Vitacura. En Chipax: adoptó una perra y se casó. 🐶💍',
      options:['Maripi Bou','Adonai Luque','Romina Lagos','Bárbara Otero']},
-    {id:'d2',name:'Adonai Luque',year:'2022',avatarText:'AL',
-     seed:'Viene del Perú y sigue en Perú. Hito profesional: al año de entrar revisó todo el código que había subido y se emocionó al darse cuenta que "una parte de Chipax era de mi autoría". 🥹 Hito personal: compró su depto corriendo contra el reloj para tenerlo listo antes de que naciera su hija — lo logró mes y medio antes. 👶 Condoro: estuvo casi año y medio sin instalar un manejador de base de datos por no querer asumir la curva de aprendizaje. Resultado: datos eliminados, madrugadas reinsertando info a mano y fatiga visual leyendo fondo negro. 😅 Entró con "Sobrecogimiento".',
+    {id:'d2',name:'Adonai Luque',year:'2022',avatarText:'AL',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/ado.jpeg',
+     seed:'Co-dueño de Fibras Naturales del Perú S.R.L. Hito pro: al año revisó su código y se emocionó al ver que "una parte de Chipax era de mi autoría". 🥹 Hito personal: compró su depto corriendo para tenerlo listo antes de que naciera su hija — lo logró mes y medio antes. 👶 Condoro: estuvo año y medio sin instalar un manejador de BD, con datos eliminados y madrugadas reinsertando info a mano. 😅 Entró con "Sobrecogimiento".',
      options:['Adonai Luque','Maripi Bou','Romina Lagos','Kiara Meza']},
-    {id:'d3',name:'Romina Lagos',year:'2025',avatarText:'RL',
-     seed:'Vivía en Portugal viajando por el mundo. 🌍 Llegó a Chipax desde Start-Up Chile. Su condoro: escribió al chat de soporte de Stark pensando que era una cuenta falsa de prueba… pero era real y las chicas le respondían todo. 😂 Su favorito de todos sus viajes: Albania. Entró con "Felicidad".',
+    {id:'d3',name:'Romina Lagos',year:'2025',avatarText:'RL',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/romi.jpeg',
+     seed:'Business Developer en Start-Up Chile. Venía viajando por el mundo desde Portugal — su favorito fue Albania. 🌍 Condoro: escribió al chat de soporte de Stark creyendo que era una cuenta falsa de prueba... pero las chicas le respondían todo. 😂 Entró con "Felicidad".',
      options:['Romina Lagos','Bárbara Otero','Adonai Luque','Maripi Bou']},
-    {id:'d4',name:'Bárbara Otero',year:'2024',avatarText:'BO',
-     seed:'De La Plata, Argentina, y sigue ahí. Viene del mundo académico de algoritmos y estructuras de datos en la UNLP. Sin condoro ni hito registrado aún… pero su código habla solo.',
+    {id:'d4',name:'Bárbara Otero',year:'2024',avatarText:'BO',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/barbi.jpeg',
+     seed:'Ayudante en Algoritmos y Estructuras en la UNLP (La Plata). Hito: pasó de necesitar ayuda en tickets simples a liderar un proyecto grande. Y volvió al ajedrez después de 20 años — ya tiene ranking FIDE. ♟️ Condoro: se apoyó muchísimo en el organigrama de HiBob para aprender nombres y caras. 😄 Entró "Entusiasmada".',
      options:['Bárbara Otero','Romina Lagos','Kiara Meza','Maripi Bou']},
-    {id:'d5',name:'Kiara Meza',year:'2026',avatarText:'KM',
-     seed:'De Chiguayante. La más nueva del árbol, acaba de llegar en 2026 desde el mundo de la contabilidad en construcción. Entró "Expectante". Todavía tiene el olor a árbol recién plantado. 🌱',
+    {id:'d5',name:'Kiara Meza',year:'2026',avatarText:'KM',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/kiari.jpeg',
+     seed:'Administrativa contable en MZF Constructora, de Chiguayante. La más nueva del árbol, acaba de llegar en 2026. Entró "Expectante". Todavía tiene el olor a árbol recién plantado. 🌱',
      options:['Kiara Meza','Bárbara Otero','Adonai Luque','Romina Lagos']},
-    {id:'imp_d',name:'La IA del Flujo de Caja',year:'2025',avatarText:'💸',isImpostor:true,
-     seed:'Dice ser una IA especialista en flujo de caja que lleva un año en Chipax. Su hito: proyectó el flujo a 12 meses y acertó en el mes 1. Su condoro: confundió CLP con USD en una planilla y nadie se dio cuenta hasta el cierre.',
+    {id:'imp_d',name:'La IA del Flujo de Caja',year:'2025',avatarText:'💸',photo:'',isImpostor:true,
+     seed:'Dice ser una IA especialista en flujo de caja. Su hito: proyectó el flujo a 12 meses y acertó en el mes 1. Condoro: confundió CLP con USD en una planilla y nadie lo notó hasta el cierre.',
      options:['¡Es un Impostor!','Maripi Bou','Romina Lagos','Bárbara Otero']}
   ]},
   Epsilon:{emoji:'✨',questions:[
-    {id:'e1',name:'Tito Montecino',year:'2020',avatarText:'TM',
-     seed:'De Las Condes, sigue ahí. Terminó sus estudios mientras trabajaba en Chipax. 🎓 Su condoro legendario: tuvo más de 100 comentarios en un solo PR en sus primeras semanas. 😱 Hoy lidera todo el equipo de software. Entró "Nervioso (un poco fome pero es la verdad)".',
-     options:['Tito Montecino','Turbo Cejas','Mirwing Rosales','Camila Valenzuela']},
-    {id:'e2',name:'Camila Valenzuela',year:'2026',avatarText:'CV',
-     seed:'De San Javier. Antes gestionaba operaciones con EE.UU. desde una empresa agrícola. Hito en Chipax: conoció Buenos Aires por primera vez. 🇦🇷 Dato curioso: hizo fotos para la Fashion Week de Milán. 📸 Entró con "Libertad".',
+    {id:'e1',name:'Tito Montecino',year:'2020',avatarText:'TM',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/tito.jpeg',
+     seed:'Teacher Assistant en la PUC, de Las Condes. Terminó sus estudios mientras trabajaba en Chipax. 🎓 Condoro legendario: más de 100 comentarios en un solo PR en sus primeras semanas. 😱 Hoy lidera todo el equipo de software. Entró "Nervioso (un poco fome pero es la verdad)".',
+     options:['Tito Montecino','Turbo Cejas','Mirwing Rosales','Nicolás Recabarren']},
+    {id:'e2',name:'Camila Valenzuela',year:'2026',avatarText:'CV',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/cami.png',
+     seed:'Customer back USA en Global Fruselva, de San Javier. Hito: conoció Buenos Aires por primera vez. 🇦🇷 Dato curioso: hizo fotos para la Fashion Week de Milán. 📸 Entró con "Libertad".',
      options:['Camila Valenzuela','Tito Montecino','María Jesús Ibarra','Mirwing Rosales']},
-    {id:'e3',name:'Turbo Cejas',year:'2022',avatarText:'TuC',
-     seed:'De Caseros, hoy en Podestá. Fue colorista en una pinturería antes de convertirse en software engineer. 🎨→💻 Su condoro épico: borró todas las empresas de la base de datos. 😱 Su hito: un mes de viaje por Europa. Entró "Extasiado".',
+    {id:'e3',name:'Turbo Cejas',year:'2022',avatarText:'TuC',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/turbo.jpeg',
+     seed:'Colorista en Pinturerías Ancona en Caseros — pasó de los colores al código. 🎨→💻 Hito: un mes de viaje por Europa. Condoro épico: borró TODAS las empresas de la base de datos. 😱 Entró "Extasiado".',
      options:['Turbo Cejas','Tito Montecino','Mirwing Rosales','Camila Valenzuela']},
-    {id:'e4',name:'María Jesús Ibarra',year:'2024',avatarText:'MI',
-     seed:'De Curanipe. Su condoro: pensó que una reunión era a las 9:30 (como todas) pero era a las 9:00 y nadie la encontraba porque Slack estaba silenciado. "Me querían escribir y yo avanzando feliz". 😂 Hito: cambio de casa, nació su 3er sobrino, y pronto conocerá Europa ✈️. Entró "Emocionada".',
+    {id:'e4',name:'María Jesús Ibarra',year:'2024',avatarText:'MI',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/jesu.jpeg',
+     seed:'Administrador en Proyecto Between Waves, de Curanipe. Hito: se cambió de casa, nació su 3er sobrino y pronto conocerá Europa ✈️. Condoro: pensó que una reunión era a las 9:30 (todas son así) pero era a las 9:00 y slack estaba silenciado. "Estaba avanzando feliz." 😂 Entró "Emocionada".',
      options:['María Jesús Ibarra','Camila Valenzuela','Tito Montecino','Turbo Cejas']},
-    {id:'e5',name:'Mirwing Rosales',year:'2019',avatarText:'MR',
-     seed:'De Ñuñoa, sigue ahí. Lleva casi 7 años en Chipax. Hito: se compró el departamento donde vive hoy. 🏠 Condoro: en sus primeras semanas llegó a la oficina equivocada (sí, Chipax tenía oficina), abrió la puerta y se dio cuenta porque no reconocía a nadie ni la distribución del lugar. 😂 Entró "Ansioso".',
-     options:['Mirwing Rosales','Turbo Cejas','María Jesús Ibarra','Camila Valenzuela']},
-    {id:'imp_e',name:'El Script Loco',year:'2026',avatarText:'🖨️',isImpostor:true,
-     seed:'Se presenta como un script Bash que lleva 6 meses en producción. Su hito: correr sin errores un lunes en la mañana. Su condoro: formateó el disco equivocado en staging. "Era el entorno correcto", insiste.',
+    {id:'e5',name:'Mirwing Rosales',year:'2019',avatarText:'MR',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/mirwing.jpeg',
+     seed:'Web Developer en Fusiona, de Ñuñoa. Hito: se compró el departamento donde vive hoy. 🏠 Condoro: en sus primeras semanas llegó a la OFICINA EQUIVOCADA (sí, Chipax tenía oficina) y cuando abrieron la puerta se dio cuenta porque no reconocía a nadie. 😂 Entró "Ansioso".',
+     options:['Mirwing Rosales','Turbo Cejas','María Jesús Ibarra','Nicolás Recabarren']},
+    {id:'imp_e',name:'El Script Loco',year:'2026',avatarText:'🖨️',photo:'',isImpostor:true,
+     seed:'Script Bash que lleva 6 meses en producción. Su hito: correr sin errores un lunes en la mañana. Condoro: formateó el disco equivocado en staging. "Era el entorno correcto", insiste.',
      options:['¡Es un Impostor!','Tito Montecino','Turbo Cejas','Mirwing Rosales']}
   ]},
   Zeta:{emoji:'🌀',questions:[
-    {id:'z2',name:'JX Cardozo',year:'2021',avatarText:'JXC',
-     seed:'De Lanús, sigue ahí. Llegó como freelance independiente. Su condoro más recordado: le dejaron gastar casi un mes de trabajo en una animación "horrible" de sugerencias de conciliación que funcionaba como Tinder (deslizar para aceptar o rechazar). Todos se rieron, nadie la usó. 😂 Entró "Emocionado por el futuro".',
+    {id:'z1',name:'JC Buruchaga',year:'2019',avatarText:'JCB',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/jc.jpeg',
+     seed:'Senior SE en Klap, de Santiago a Vitacura. Hoy lidera todo el equipo de ingeniería como Head of Engineering. Hito: construir su casa del campo. 🏡 Condoro: borró la BD de producción. 😱 Entró con "Miedo".',
+     options:['JC Buruchaga','JX Cardozo','Jake Romero','Pipe']},
+    {id:'z2',name:'JX Cardozo',year:'2021',avatarText:'JXC',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/juancruz.jpeg',
+     seed:'Freelance FullStack Developer de Lanús. Hito: muchos mini hitos, le fue muy bien con lo que se propuso. Condoro épico: le dejaron gastar casi 1 mes en una animación horrible de conciliación estilo Tinder (deslizar para aceptar o rechazar). Nadie la usó. 😂 Entró "Emocionado por el futuro".',
      options:['JX Cardozo','Jake Romero','Yordana Aguilar','Sofi Depetris']},
-    {id:'z3',name:'Jake Romero',year:'2021',avatarText:'JR',
-     seed:'De Puente Alto. Fue papá por segunda vez en Chipax. 👨‍👧‍👦 Su condoro: creó un script llamado chonky.sh para descargar datos de empresas. El nombre está inspirado en su gato Chester, "porque es gordito". La alternativa era chunky.sh. No hizo poll. 🐱 Entró "Reflexivo".',
+    {id:'z3',name:'Jake Romero',year:'2021',avatarText:'JR',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/jake.jpeg',
+     seed:'Senior FullStack en Transvip, de Puente Alto. Fue papá por segunda vez en Chipax. 👨‍👧‍👦 Condoro: su script se llama chonky.sh porque está inspirado en su gato Chester (es gordito). La alternativa era chunky.sh. No hizo poll. 🐱 Entró "Reflexivo".',
      options:['Jake Romero','Pipe','Yordana Aguilar','JX Cardozo']},
-    {id:'z4',name:'Pipe',year:'2018',avatarText:'PI',
-     seed:'Llegó al árbol en 2018 después de estar viajando por el mundo hasta quedarse sin plata. 😂 Dos amigos lo llamaron para trabajar juntos. Hoy vive en Portugal y su gran hito en Chipax fue convertirse en papá. 👶 Uno de los primeros en plantar raíces.',
+    {id:'z4',name:'Pipe',year:'2018',avatarText:'PI',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/pipe.jpeg',
+     seed:'Estaba viajando por el mundo y volvió porque se quedaba sin plata — dos amigos lo llamaron para trabajar juntos. 😂 Hoy vive en Portugal. Hito: fue papá. 👶 Condoro: salía todas las mañanas con Joaquín a comprarse un muffin.',
      options:['Pipe','Sofi Depetris','Jake Romero','JX Cardozo']},
-    {id:'z5',name:'Yordana Aguilar',year:'2023',avatarText:'YA',
-     seed:'De Puerto Montt, hoy en Punta Arenas. 🧊 Su condoro: le dijeron "rompiste una planilla de Excel" y se quería morir… pero al final no había roto nada. Se habían confundido. 😅 Su hito: irse a vivir sola a otra ciudad y trabajar mientras viaja. Entró "Ilusionada (el sueño de entrar se me había cumplido)".',
+    {id:'z5',name:'Yordana Aguilar',year:'2023',avatarText:'YA',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/yordana.jpeg',
+     seed:'Encargada de Adquisiciones en Huber Ingeniería, de Puerto Montt a Punta Arenas. 🧊 Hito: irse a vivir sola a otra ciudad y trabajar viajando. Condoro: le dijeron "rompiste una planilla de Excel"... se quería morir. No era cierto, se habían confundido. 😅 Entró "Ilusionada (el sueño de entrar se me había cumplido)".',
      options:['Yordana Aguilar','Sofi Depetris','JX Cardozo','Pipe']},
-    {id:'z6',name:'Sofi Depetris',year:'2022',avatarText:'SD',
-     seed:'De Córdoba, sigue ahí. Llegó del e-commerce. Su condoro: creía que en Chipax había que hablar SIEMPRE con emojis porque todo el mundo lo hacía. 😂🎉✨ Hito: ser líder por primera vez y mudarse con su novio. Entró "Muy entusiasmada y sorprendida del nivel de comunicación de la empresa".',
-     options:['Sofi Depetris','Yordana Aguilar','Jake Romero','Pipe']},
-    {id:'imp_z',name:'Bot Tributario 404',year:'2026',avatarText:'🔌',isImpostor:true,
-     seed:'Asegura que lleva un año en Chipax como "especialista tributario automatizado". Su hito: generó el F29 con un día de anticipación. Su condoro: le respondió a un cliente con el template equivocado 47 veces seguidas antes de que alguien lo notara.',
+    {id:'imp_z',name:'Bot Tributario 404',year:'2026',avatarText:'🔌',photo:'',isImpostor:true,
+     seed:'Asegura que lleva un año en Chipax como "especialista tributario automatizado". Hito: generó el F29 con un día de anticipación. Condoro: respondió a un cliente con el template equivocado 47 veces seguidas.',
      options:['¡Es un Impostor!','JX Cardozo','Pipe','Sofi Depetris']}
+  ]},
+  Eta:{emoji:'🌸',questions:[
+    {id:'h1',name:'Sofi Depetris',year:'2022',avatarText:'SD',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/sofi.jpeg',
+     seed:'Admin de E-commerce en Marketing & Negocios SRL, de Córdoba. Hito: ser líder por primera vez y mudarse con su novio. Condoro: creía que en Chipax había que hablar SIEMPRE con emojis porque todo el mundo lo hacía. 😂🎉✨ Entró "Muy entusiasmada y sorprendida del nivel de comunicación".',
+     options:['Sofi Depetris','Pablo Terrone','Nicolás Recabarren','JC Buruchaga']},
+    {id:'h2',name:'Pablo Terrone',year:'2025',avatarText:'PT',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/pablot.jpeg',
+     seed:'Fullstack Developer Ssr en HitOcean, de Esquel. Hito: terminó la herramienta de su tesis y la entregó a 2 centros del país. 🎓 Condoro: estuvo 2 días en un loop arreglando la vista de conciliación avanzada — solucionaba un lado y rompía el otro porque no se daba cuenta que estaban relacionados. 😅 Entró "Emocionado".',
+     options:['Pablo Terrone','Sofi Depetris','Nicolás Recabarren','Jake Romero']},
+    {id:'h3',name:'Nicolás Recabarren',year:'2021',avatarText:'NR',photo:'https://raw.githubusercontent.com/DalmaDiazA/raices-chipax/main/nico.jpeg',
+     seed:'Desarrollador de front-end en Eleva, de Independencia. Lleva casi 6 años en Chipax construyendo interfaces. Sin condoro registrado — probablemente porque nunca rompió nada. 🤫',
+     options:['Nicolás Recabarren','Pablo Terrone','Sofi Depetris','Tito Montecino']},
+    {id:'imp_h',name:'IA Conciliadora 3.0',year:'2026',avatarText:'🧿',photo:'',isImpostor:true,
+     seed:'Bot que asegura haber conciliado 10.000 documentos sin que ninguno se llamara "FINAL_v3_este_sí_ok". Su hito: procesar una transferencia sin preguntar el RUT dos veces.',
+     options:['¡Es un Impostor!','Sofi Depetris','Pablo Terrone','Nicolás Recabarren']}
   ]}
 };
-
 /* ══════════════════════════════════════════════════
    GAME STATE
 ══════════════════════════════════════════════════ */
@@ -435,7 +448,7 @@ function showScreen(id){['s0','s1','s2','s-admin','s-wait'].forEach(s=>{const el
 ══════════════════════════════════════════════════ */
 function buildLobby(){
   const g=document.getElementById('lobby-grid');g.innerHTML='';
-  const teamNames={Alfa:'CLAN ALFA',Beta:'CLAN BETA',Gamma:'CLAN GAMMA',Delta:'CLAN DELTA',Epsilon:'CLAN ÉPSILON',Zeta:'CLAN ZETA'};
+  const teamNames={Alfa:'CLAN ALFA',Beta:'CLAN BETA',Gamma:'CLAN GAMMA',Delta:'CLAN DELTA',Epsilon:'CLAN ÉPSILON',Zeta:'CLAN ZETA',Eta:'CLAN ETA'};
   for(const[k,v] of Object.entries(CL_ALL)){
     const b=document.createElement('button');
     b.className='py-3.5 px-4 rounded-xl text-white font-premium font-bold text-sm transition-all duration-300 flex flex-col items-center gap-1';b.style.cssText='border:1px solid rgba(0,186,143,.2);background:rgba(10,22,16,.3)';b.onmouseover=function(){this.style.background='rgba(0,80,55,.3)';this.style.borderColor='rgba(0,186,143,.5)';this.style.boxShadow='0 0 18px rgba(0,186,143,.2)'};b.onmouseout=function(){this.style.background='rgba(10,22,16,.3)';this.style.borderColor='rgba(0,186,143,.2)';this.style.boxShadow=''};
@@ -1191,52 +1204,68 @@ function finaleLoop(ts){
    Estilo imagen referencia: bola oscura grande, borde de color del equipo,
    iniciales en el centro, nombre completo debajo en texto limpio.
 ── */
+/* ── Cache de imágenes de fotos ── */
+const _photoCache={};
+function getPhoto(url){
+  if(!url)return null;
+  if(_photoCache[url]) return _photoCache[url].complete&&_photoCache[url].naturalWidth>0 ? _photoCache[url] : null;
+  const img=new Image();
+  img.crossOrigin='anonymous';
+  img.src=url;
+  img.onload=()=>{ invalidateTreeCache(); }; /* redibujar cuando cargue */
+  _photoCache[url]=img;
+  return null;
+}
+
 function drawPersonBall(ctx,f){
   if(f.alpha<=0)return;
-  const R = f.size*1.1;   /* radio grande, ~24-33px */
+  const R = f.size*1.1;
   const nm = f.m.name.split(' ')[0];
 
   ctx.save();
 
-  /* ── Glow exterior del color del equipo ── */
+  /* Glow + borde de color */
   ctx.globalAlpha = f.alpha*.55;
   ctx.shadowBlur  = R*.9;
   ctx.shadowColor = `hsl(${f.hue},90%,65%)`;
-
-  /* ── Borde de color (anillo exterior) ── */
   ctx.beginPath();ctx.arc(f.x,f.y,R+2,0,Math.PI*2);
   ctx.strokeStyle=`hsl(${f.hue},85%,62%)`;
   ctx.lineWidth=2;ctx.stroke();
 
-  /* ── Fondo oscuro glassmorphism (como imagen referencia) ── */
+  /* Fondo oscuro */
   ctx.globalAlpha = f.alpha*.95;
   ctx.shadowBlur  = 0;
-  const bg = ctx.createRadialGradient(f.x-R*.25,f.y-R*.3,0, f.x,f.y,R);
+  const bg = ctx.createRadialGradient(f.x-R*.25,f.y-R*.3,0,f.x,f.y,R);
   bg.addColorStop(0,'rgba(18,12,30,.92)');
   bg.addColorStop(.6,'rgba(12,8,22,.96)');
   bg.addColorStop(1,'rgba(8,4,16,.98)');
-  ctx.fillStyle = bg;
+  ctx.fillStyle=bg;
   ctx.beginPath();ctx.arc(f.x,f.y,R,0,Math.PI*2);ctx.fill();
 
-  /* ── Iniciales centradas — fuente grande monoespace ── */
+  /* Foto circular si existe, sino iniciales */
+  const photo = f.m.photo ? getPhoto(f.m.photo) : null;
   ctx.globalAlpha = f.alpha;
-  ctx.fillStyle   = `hsl(${f.hue},80%,75%)`;
-  ctx.font        = `bold ${Math.max(11,R*.48)}px monospace`;
-  ctx.textAlign   = 'center';
-  ctx.textBaseline= 'middle';
-  /* Si tiene año de ingreso guardado, mostrarlo debajo de las iniciales */
-  const hasYear = f.m.year;
-  ctx.fillText(f.m.init, f.x, hasYear ? f.y-R*.16 : f.y);
-
-  /* Año de ingreso (pequeño, debajo de iniciales) */
-  if(hasYear){
-    ctx.fillStyle = `hsl(${f.hue},60%,60%)`;
-    ctx.font      = `${Math.max(8,R*.3)}px monospace`;
-    ctx.fillText(hasYear, f.x, f.y+R*.22);
+  if(photo){
+    ctx.save();
+    ctx.beginPath();ctx.arc(f.x,f.y,R*.88,0,Math.PI*2);ctx.clip();
+    ctx.drawImage(photo, f.x-R*.88, f.y-R*.88, R*1.76, R*1.76);
+    ctx.restore();
+  }else{
+    ctx.fillStyle   = `hsl(${f.hue},80%,75%)`;
+    ctx.font        = `bold ${Math.max(11,R*.48)}px monospace`;
+    ctx.textAlign   = 'center';
+    ctx.textBaseline= 'middle';
+    const hasYear = f.m.year;
+    ctx.fillText(f.m.init, f.x, hasYear ? f.y-R*.16 : f.y);
+    if(hasYear){
+      ctx.fillStyle = `hsl(${f.hue},60%,60%)`;
+      ctx.font      = `${Math.max(8,R*.3)}px monospace`;
+      ctx.fillText(hasYear, f.x, f.y+R*.22);
+    }
   }
 
-  /* ── Nombre debajo del círculo — texto limpio sin pill ── */
-  const nmSize = Math.max(10, R*.42);
+  /* Nombre debajo */
+  const nmSize = Math.max(10,R*.42);
   ctx.font      = `500 ${nmSize}px "Space Grotesk",sans-serif`;
   ctx.fillStyle = 'rgba(255,255,255,.82)';
   ctx.globalAlpha = f.alpha*.85;
@@ -1246,9 +1275,7 @@ function drawPersonBall(ctx,f){
   ctx.restore();
 }
 
-/* ── PERSONA POSADA EN RAMA: misma bola oscura, sin pétalos, solo el nodo ──
-   Las personas SON el árbol. Sin flores artificiales.
-── */
+/* ── PERSONA POSADA EN RAMA ── */
 function drawPersonFlower(ctx,f,bloom,settled){
   if(f.alpha<=0)return;
   const p  = Math.max(0,Math.min(bloom,1));
